@@ -1,23 +1,30 @@
 package Zombies;
 
-import Armas.Arma;
-import Interfaces.Atacar;
-import Interfaces.Descripcion;
 
-public class ZombieNormal extends Zombie implements Descripcion , Atacar {
-    public ZombieNormal(String nombre, int salud, Arma arma, String sexo, String especialidad) {
-        super(nombre, salud, arma, sexo, especialidad);
+import Interfaces.Atacar;
+
+import Interfaces.DescripcionZombie;
+
+public class ZombieNormal extends Zombie implements DescripcionZombie, Atacar {
+    public ZombieNormal(String nombre, int salud, String sexo, String especialidad) {
+        super(nombre, salud, sexo, especialidad);
     }
 
     @Override
-    public void describir() {
+    public void describirZombie() {
         System.out.println("También conocidos como Zombis, Caminantes, Muertos Vivientes son infectados que no " +
                 "mutaron y solamente perdieron la razón, tienen todavía la forma humana.");
 
     }
 
     @Override
-    public void atacar() {
+    public int atacar() {
+        int minimo=1;
+        int maximo=3;
+
+        int daño= (int) (Math.random()*(maximo-minimo)+minimo);
+
+        System.out.println("El zombie te golpea haciendote "+daño);
 
     }
 

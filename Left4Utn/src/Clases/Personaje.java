@@ -5,13 +5,11 @@ import Armas.Arma;
 public class Personaje {
     private String nombre;
     private int salud;
-    private Arma arma;
     private String sexo;
 
-    public Personaje(String nombre, int salud, Arma arma, String sexo) {
+    public Personaje(String nombre, int salud,String sexo) {
         this.nombre = nombre;
         this.salud = salud;
-        this.arma = arma;
         this.sexo = sexo;
     }
 
@@ -39,13 +37,7 @@ public class Personaje {
         this.salud = salud;
     }
 
-    public Arma getArma() {
-        return arma;
-    }
 
-    public void setArma(Arma arma) {
-        this.arma = arma;
-    }
 
     public String getSexo() {
         return sexo;

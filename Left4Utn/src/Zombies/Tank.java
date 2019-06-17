@@ -1,15 +1,16 @@
 package Zombies;
 
-import Armas.Arma;
-import Interfaces.Atacar;
-import Interfaces.Descripcion;
 
-public class Tank extends Zombie implements Descripcion, Atacar {
-    public Tank(String nombre, int salud, Arma arma, String sexo, String especialidad) {
-        super(nombre, salud, arma, sexo, especialidad);
+import Interfaces.Atacar;
+
+import Interfaces.DescripcionZombie;
+
+public class Tank extends Zombie implements DescripcionZombie, Atacar {
+    public Tank(String nombre, int salud, String sexo, String especialidad) {
+        super(nombre, salud, sexo, especialidad);
     }
 
-    public void describir()
+    public void describirZombie()
     {
         System.out.println("Infectado monstruoso con una gran masa muscular y resistencia. Puede agarrar cosas " +
                 "pesadas (como rocas, vehículos livianos, contenedores de basuras e incluso árboles enteros) y tirarlos a los supervivientes. También puede lanzar tanto a infectados como a los supervivientes por los aires, haciéndoles mucho daño..");
@@ -17,8 +18,16 @@ public class Tank extends Zombie implements Descripcion, Atacar {
     }
 
     @Override
-    public void atacar() {
+    public int atacar() {
 
+        int minimo=20;
+        int maximo=25;
+
+        int daño= (int) (Math.random()*(maximo-minimo)+minimo);
+
+        System.out.println("Te tira lo primero que encuentra a mano haciendote "+daño+ "de daño ");
+
+        return daño;
     }
 
     @Override

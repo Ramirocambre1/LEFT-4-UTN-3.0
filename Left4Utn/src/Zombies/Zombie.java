@@ -1,14 +1,12 @@
 package Zombies;
 
-import Armas.Arma;
 import Clases.Personaje;
-import Interfaces.Descripcion;
 
 public class Zombie extends Personaje  {
     private String especialidad;
 
-    public Zombie(String nombre, int salud, Arma arma, String sexo, String especialidad) {
-        super(nombre, salud, arma, sexo);
+    public Zombie(String nombre, int salud ,String sexo, String especialidad) {
+        super(nombre, salud,sexo);
         this.especialidad = especialidad;
     }
 

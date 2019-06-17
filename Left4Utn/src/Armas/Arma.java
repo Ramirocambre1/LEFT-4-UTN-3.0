@@ -16,7 +16,6 @@ public class Arma {
         return
                 "Arma:'" + nombreArma + '\'' +
                 ", daño:" + daño +
-                ", tipo:'" + tipo + '\'' +
-                '}';
+                ", tipo:'" + tipo + '\'';
     }
 }

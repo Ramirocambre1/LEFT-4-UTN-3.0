@@ -1,16 +1,17 @@
 package Zombies;
 
-import Armas.Arma;
-import Interfaces.Atacar;
-import Interfaces.Descripcion;
 
-public class Charger extends Zombie implements Descripcion , Atacar {
-    public Charger(String nombre, int salud, Arma arma, String sexo, String especialidad) {
-        super(nombre, salud, arma, sexo, especialidad);
+import Interfaces.Atacar;
+
+import Interfaces.DescripcionZombie;
+
+public class Charger extends Zombie implements DescripcionZombie, Atacar {
+    public Charger(String nombre, int salud, String sexo, String especialidad) {
+        super(nombre, salud,sexo, especialidad);
     }
 
     @Override
-    public void describir() {
+    public void describirZombie() {
 
         System.out.println(" Infectado deforme que posee un robusto y gigantesco brazo, cuyo tamaño es inversamente " +
                 "proporcional al otro, que es muy pequeño. Es capaz de correr a gran velocidad hacia uno de los " +
@@ -19,8 +20,15 @@ public class Charger extends Zombie implements Descripcion , Atacar {
     }
 
     @Override
-    public void atacar() {
+    public int atacar() {
+        int minimo=10;
+        int maximo=15;
 
+        int daño= (int) (Math.random()*(maximo-minimo)+minimo);
+
+        System.out.println("El Charger carga hacia vos haciendote "+daño+ "de daño ");
+
+        return daño;
     }
 
     @Override
