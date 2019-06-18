@@ -20,8 +20,10 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
 
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
-        System.out.println(" Todo comienza en la ciudad de "+ getLocalizacion()+ " en la azotea de la Universidad" +
+        System.out.println("-----------------------");
+        System.out.println("Todo comienza en la ciudad de "+ getLocalizacion()+ " en la azotea de la Universidad" +
                 " UTN. El" + " superviviente observa como un helicóptero de la prefectura se aleja sin " + "verlo,"+"La hora era:"+dateFormat.format(date)+" y el clima estaba "+getClima());
+        System.out.println("-----------------------");
 
     }
 
@@ -30,8 +32,8 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
     {
         System.out.println("1.Atacar");
         System.out.println("2.Correr");
-        System.out.println("3.Consultar vida");
-        System.out.println("4.Volver hacia atras");
+        System.out.println("3.Consultar vida y Equipamiento");
+
     }
 
     public int parte1()
@@ -67,39 +69,47 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
         return opcion;
     }
 
-    public int parte2()
+    public void parte2(int opcion)
     {
-        Scanner scanf= new Scanner(System.in);
-        int opcion=0;
+
         int flag=0;
 
         Menu menu= new Menu();
-        System.out.println("Abris la puerta,bajas las escaleras al piso inferior,al llegar tenes 3 pasillos distintos" +
-                "izquierda,medio,derecha.Te pones a pensar por que camino ir");
-        menu.ingreseOpcion();
+
 
       while (flag==0)
       {
-          System.out.println("1.Pasillo izquierdo");
-          System.out.println("2.Seguir de frente");
-          System.out.println("3.Pasillo derecho");
-          opcion=scanf.nextInt();
+
 
         if (opcion>0 && opcion<4)
       {
           if (opcion==1)
           {
-              System.out.println("Decidis ir por el pasillo de la izquierda te encontras con un zombie,detecta tu " +
-                      "presencia y se acerca hacia,que decision tomar");
-              opcionesPrincipales();
+              System.out.println("Decidiste ir por el pasillo de la izquierda te encontras con un zombie en el medio " +
+                      "del pasillo" +
+                      ",detecta tu " +
+                      "presencia y se acerca hacia vos,que decision elegis?");
+
               flag=1;
           }
           else if (opcion==2)
           {
+              System.out.println("Decidiste ir por el pasillo del medio,te encuentras con unos de tus compañeros de " +
+                      "la universidad,le preguntas que esta pasando pero el tampoco sabe nada.Tiene demasiado miedo " +
+                      "para continuar asi que vuelves hacia atras.");
+
               flag=1;
           }
           else if(opcion==3)
           {
+              System.out.println("Decidiste ir por el pasillo de la derecha,el cual da a los baños,Con valentia " +
+                      "entras para ver " +
+                      "si hay" +
+                      " alguien vivo,esta vacio pero antes de darte la vuelta en el piso encontras un pistola y la " +
+                      "agarras.");
+
+              System.out.println("Conseguiste una nueva arma---> 'Glock 18' ");
+
               flag=1;
 
           }
@@ -113,7 +123,12 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
       }
 
 
-        return opcion;
+
+    }
+
+    public String  correrMuerte()
+    {
+        return "Decidiste correr,llamando la atencion de mas zombies llevando a tu muerte";
 
     }
 

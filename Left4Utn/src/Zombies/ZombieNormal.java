@@ -20,11 +20,13 @@ public class ZombieNormal extends Zombie implements DescripcionZombie, Atacar {
     @Override
     public int atacar() {
         int minimo=1;
-        int maximo=3;
+        int maximo=6;
 
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
         System.out.println("El zombie te golpea haciendote "+daño);
+
+        return daño;
 
     }
 
@@ -32,4 +34,6 @@ public class ZombieNormal extends Zombie implements DescripcionZombie, Atacar {
     public String toString() {
         return super.toString();
     }
+
+
 }

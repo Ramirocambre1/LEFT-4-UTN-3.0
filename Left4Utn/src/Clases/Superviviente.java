@@ -20,19 +20,38 @@ public class Superviviente extends Personaje implements Atacar {
     }
 
     @Override
-    public void atacar() {
+    public int atacar() {
 
+        int daño=arma.getDaño();
+
+        System.out.println("Atacaste al Zombie haciendole "+ daño +" de daño al infectado");
+
+        return daño;
     }
 
-    public void restarVida(int vida)
+
+    public Arma getArma() {
+        return arma;
+    }
+
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public  void encontrarArma(Arma arma)
     {
-        super.setSalud(5);
+        setArma(arma);
 
     }
 
-    public void  vidaCero()
+    public String consultarArma()
     {
-        super.setSalud(0);
-    }
+        String nombreArma;
 
+        nombreArma=this.arma.getNombreArma();
+
+        return "Tu arma equipada es: "+nombreArma;
+
+
+    }
 }

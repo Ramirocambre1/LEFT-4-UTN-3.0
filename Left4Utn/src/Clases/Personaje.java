@@ -37,7 +37,14 @@ public class Personaje {
         this.salud = salud;
     }
 
+    public String consultarVida()
+    {
+        int salud=this.getSalud();
 
+        return "Tu salud actualmente es: "+salud;
+
+
+    }
 
     public String getSexo() {
         return sexo;
@@ -45,5 +52,28 @@ public class Personaje {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public void restarVida(int vida)
+    {
+
+
+        this.salud=this.salud-vida;
+
+
+    }
+
+    public void resetearVida(int salud)
+    {
+        this.salud=salud;
+
+    }
+
+
+
+
+    public void  vidaCero()
+    {
+        this.setSalud(0);
     }
 }

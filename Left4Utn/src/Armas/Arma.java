@@ -18,4 +18,16 @@ public class Arma {
                 ", daño:" + daño +
                 ", tipo:'" + tipo + '\'';
     }
+
+    public int getDaño() {
+        return daño;
+    }
+
+    public String getNombreArma() {
+        return nombreArma;
+    }
+
+    public void setNombreArma(String nombreArma) {
+        this.nombreArma = nombreArma;
+    }
 }
