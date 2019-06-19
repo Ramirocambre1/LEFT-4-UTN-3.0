@@ -24,6 +24,7 @@ public class Jockey extends Zombie implements DescripcionZombie, Atacar {
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
         System.out.println("Jockey salta sobre tu cabeza haciendote  "+daño+ "de daño ");
+        System.out.println("-----------------------");
 
         return daño;
     }

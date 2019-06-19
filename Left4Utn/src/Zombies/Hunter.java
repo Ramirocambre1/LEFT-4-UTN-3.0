@@ -19,11 +19,12 @@ public class Hunter extends Zombie implements DescripcionZombie,Atacar {
     @Override
     public int atacar() {
         int minimo=10;
-        int maximo=10;
+        int maximo=15;
 
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
         System.out.println("Hunter salta sobre vos rajuñandote provocandote "+daño+ "de daño ");
+        System.out.println("-----------------------");
 
         return daño;
     }

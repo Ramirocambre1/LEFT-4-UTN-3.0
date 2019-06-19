@@ -19,15 +19,18 @@ public class Capitulo2 extends Mapa implements DescripcionNivel {
         System.out.println("-----------------------");
         System.out.println("-------Lograste escapar de la UTN-------");
         System.out.println("-------CAPITULO 2--------");
-        System.out.println("No entendes lo que esta pasando, llegas al edificio "+getLocalizacion() +" principal de " +
-                "la prefectura a" +
+        System.out.println("No entendes lo que esta pasando, llegas al  "+getLocalizacion() +" a" +
                 " " +
                 "las "+dateFormat.format(date)+". Al parecer, no quedo " +
                 "nadie vivo, recordas que viste como se fue el helicoptero y te das cuenta que tal vez ese fue el " +
-                "ultimo rescate.\nDesesperado, por la avenida de los Pescadores, " +
-                "empezas a escuchar mucho ruido, miras y es una horda de zombies acercandose.\nLo primero que se te " +
+                "ultimo rescate.\nDesesperado unos gritos lejanos llaman tu atencion , por la avenida de los " +
+                "Pescadores, " +
+                "empezas a observar cientos de siluetas a lo lejos viniendo hacia vos,al tiempo que se van acercando " +
+                "te das cuenta que no ya no son mas humanos sino" +
+                "  es una horda de " +
+                "zombies .\nLo primero que se te " +
                 "ocurre es intentar esconderse dentro del edificio, " +
-                "esquivas una fortaleza de palos y alambres para entrar al edificio, la puerta estaba abierta.");
+                "saltas una barrera de palos y alambres para entrar al edificio, la puerta se encontraba abierta.");
         System.out.println("-----------------------");
 
     }
@@ -143,10 +146,13 @@ return opcion;
 
     public int parte3(){ //escape
         System.out.println("-----------------------");
-        System.out.println("Logras comunicarte con la persona del walkie talkie, y te avisan que en unas horas, desde" +
-                " la base naval, zarpan submarinos en busca de nuevas tierras no infectadas." +
-                "\nTambien te dicen que no pueden pasarte a buscar, que solo te ayudaran si llegas hasta alli. Te " +
-                "enojas, pateas una mesa y se desarma.\nPor el ruido provocado, entra a tu habitacion" +
+        System.out.println("Logras comunicarte con la persona del walkie talkie, y te avisa que al dia siguiente  a " +
+                "las 13:30 pm" +
+                "  desde" +
+                " la base naval, zarparan submarinos en busca de nuevas tierras sin infectados." +
+                "\nTe avisa que no pueden mandarte ayuda,que tendras que ir solo a la base,Unicamente te ayudaran si " +
+                "llegas hasta alli. Perplejo por lo que te dijo " +
+                ",pateas la puerta por donde entraste .\nPor el ruido provocado, entra a tu habitacion" +
                 "un infectado con capucha, corriendo y saltando velozmente. Que haces?");
         System.out.println("-----------------------");
         System.out.println("1. Usas tu arma para defenderte");
@@ -166,7 +172,8 @@ return opcion;
             {
                  if (opcion==1)
              {      System.out.println("-----------------------");
-                    System.out.println("Decidis enfrentarte al zombie, el salta sobre tu cuerpo, te rasguña pero no lo suficiente ya que utilizas tu arma para empujarlo. Preparate para luchar.");
+                    System.out.println("Decidis enfrentarte al encapuchado, el salta sobre tu cuerpo, te rasguña " +
+                            "pero no lo suficiente ya que utilizas tu arma para empujarlo. Preparate para luchar.");
                  System.out.println("-----------------------");
                      flag=1;
              }
@@ -187,5 +194,18 @@ return opcion;
             }
         }
         return opcion;
+    }
+
+    public void parte4()
+    {
+        System.out.println("Cansado por la batalla con el infectado y ya con el dia anocheciendo decidis descansar " +
+                        "para recuperar tus fuerzas y prepararte para emprender tu camino mañana " +
+                "hacia la base naval");
+                System.out.println("-----------------------");
+
+        System.out.println("");
+        System.out.println("-----------Fin del capitulo-----------");
+        System.out.println("");
+
     }
 }

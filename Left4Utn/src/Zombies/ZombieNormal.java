@@ -25,6 +25,7 @@ public class ZombieNormal extends Zombie implements DescripcionZombie, Atacar {
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
         System.out.println("El zombie te golpea haciendote "+daño);
+        System.out.println("-----------------------");
 
         return daño;
 

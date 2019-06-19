@@ -1,6 +1,7 @@
 package Clases;
 
 import Armas.Arma;
+import Exceptions.NoVidaException;
 import Interfaces.Atacar;
 
 public class Superviviente extends Personaje implements Atacar {
@@ -23,10 +24,24 @@ public class Superviviente extends Personaje implements Atacar {
     public int atacar() {
 
         int daño=arma.getDaño();
-
-        System.out.println("Atacaste al infectado haciendole "+ daño +" de daño ");
-
+        System.out.println("-----------------------");
+        System.out.println("Atacaste al infectado con "+ arma.getNombreArma() +" haciendole "+ daño +" de daño ");
+        System.out.println("-----------------------");
         return daño;
+    }
+
+    public int getSaludJugador()throws NoVidaException
+    {
+      int vida= getSalud();
+
+      if (vida<=0)
+      {
+          throw  new NoVidaException("GAME OVER TE QUEDASTE SIN VIDA");
+
+      }
+
+      return vida;
+
     }
 
 
@@ -53,5 +68,16 @@ public class Superviviente extends Personaje implements Atacar {
         return "Tu arma equipada es: "+nombreArma;
 
 
+    }
+
+    public void  vidaCero() throws NoVidaException
+    {
+        this.setSalud(0);
+
+        if (getSalud()==0)
+        {
+            throw  new NoVidaException("GAME OVER TE QUEDASTE SIN VIDA");
+
+        }
     }
 }

@@ -6,6 +6,7 @@ import Armas.Pistola;
 import Armas.RifleAsalto;
 import Capitulos.Capitulo1;
 import Capitulos.Capitulo2;
+import Capitulos.Capitulo3;
 import Clases.Juego;
 import Clases.ListaGenerica;
 import Capitulos.Mapa;
@@ -48,6 +49,7 @@ public class Main {
 
         Capitulo1 cap1 = new Capitulo1("Lluvioso","Mar del Plata");
         Capitulo2 cap2 = new Capitulo2("Nublado","Edificio de prefectura");
+        Capitulo3 cap3 = new Capitulo3("Soleado","Base Naval");
 
         ListaGenerica listaArmas = new ListaGenerica();
         listaArmas.agregarElementos(escopeta1);
@@ -115,13 +117,9 @@ do {
 
         if (opcionelegida2==1)
         {
-            while (true)
+            while (jugador.getSalud()>0 && zombie1.getSalud()>0)
             {
-                try {
-                    if (!(jugador.getSalud()>0 && zombie1.getSalud()>0)) break;
-                } catch (NoVidaException e) {
-                    e.printStackTrace();
-                }
+
                 cap1.opcionesPrincipales();
                 menu.ingreseOpcion();
                 opcionPrincipal=scanf.nextInt();
@@ -151,8 +149,8 @@ do {
                 }
             }
 
-            try {
-                if (jugador.getSalud()>0)
+
+                if (jugador.getSalud()>=0)
                 {
                     opcionelegida=cap1.parte3();
 
@@ -267,9 +265,12 @@ do {
                                             else if (opcionPrincipal==2)
                                             {
                                                     System.out.println("-----------------------");
-                                                    System.out.println("Decidiste correr,pero no tienes a donde estas" +
-                                                                    " en una habitacion cerrada te golpeas la cabeza " +
-                                                                    "con una estanteria perdiendo 2 de vida");
+                                                    System.out.println("Decidiste correr,pero no tenes alternativa  " +
+                                                            "donde " +
+                                                            "estas" +
+                                                                    " es una habitacion cerrada,Te golpeas la cabeza" +
+                                                            " " +
+                                                                    "contra una estanteria perdiendo 2 de vida");
                                                     jugador.restarVida(2);
                                                     System.out.println("-----------------------");
 
@@ -282,14 +283,38 @@ do {
                                                 System.out.println(jugador.consultarArma());
                                             }
                                         }
+                                            if (jugador.getSalud()>0)
+                                            {
+                                                cap2.parte4();
+
+                                                cap3.describirNivel();
+
+
+
+
+
+                                            }
+                                            else
+                                            {
+                                                try {
+                                                    jugador.vidaCero();
+                                                } catch (NoVidaException e) {
+                                                    e.printStackTrace();
+                                                }
+
+                                            }
+
 
 
                                     }
+
                                     else if (opcionelegida5==2)
                                     {
-                                        jugador.vidaCero();
-
-
+                                        try {
+                                            jugador.vidaCero();
+                                        } catch (NoVidaException e) {
+                                            e.printStackTrace();
+                                        }
                                     }
 
 
@@ -299,10 +324,17 @@ do {
                             }
                     }
                 }
-            } catch (NoVidaException e) {
-                e.printStackTrace();
+                else
+                {
+                    try {
+                        jugador.vidaCero();
+                    } catch (NoVidaException e) {
+                        e.printStackTrace();
+                    }
+
+                }
             }
-        }
+
 
         else if(flag1==0 && opcionelegida2==2)
         {

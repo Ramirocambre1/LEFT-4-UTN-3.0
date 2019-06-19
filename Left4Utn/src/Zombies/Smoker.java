@@ -26,6 +26,7 @@ public class Smoker extends Zombie implements DescripcionZombie, Atacar {
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
         System.out.println("El smoker te atrapa con su lengua haciendote  "+daño+ "de daño ");
+        System.out.println("-----------------------");
 
         return daño;
     }

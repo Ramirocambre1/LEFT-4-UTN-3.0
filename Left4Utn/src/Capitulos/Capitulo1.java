@@ -101,7 +101,7 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
                     System.out.println("Decidiste ir por el pasillo de la izquierda te encontras con un zombie en el medio " +
                             "del pasillo" +
                             ",detecta tu " +
-                            "presencia y se acerca hacia vos,que decision elegis?");
+                            "presencia y se acerca hacia vos,que decision tomas?");
                     System.out.println("-----------------------");
 
 
@@ -165,7 +165,10 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
 
     public String  correrMuerte()
     {
-        return "Decidiste correr,llamando la atencion de mas zombies llevando a tu muerte";
+        return "-----------------------\nDecidiste correr,Provando la atencion de mas zombies,no podes contra todos " +
+                "vos solo," +
+                " llevando a tu " +
+                "muerte\n-----------------------";
 
     }
 
