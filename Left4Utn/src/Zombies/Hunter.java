@@ -23,7 +23,7 @@ public class Hunter extends Zombie implements DescripcionZombie,Atacar {
 
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
-        System.out.println("Hunter salta sobre ti rajuñandote entero "+daño+ "de daño ");
+        System.out.println("Hunter salta sobre vos rajuñandote provocandote "+daño+ "de daño ");
 
         return daño;
     }

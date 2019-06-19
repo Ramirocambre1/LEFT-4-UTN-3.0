@@ -26,7 +26,7 @@ public class Charger extends Zombie implements DescripcionZombie, Atacar {
 
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
-        System.out.println("El Charger carga hacia vos haciendote "+daño+ "de daño ");
+        System.out.println("El Charger carga hacia vos con fuerza,espujandote y  haciendote "+daño+ " de daño ");
 
         return daño;
     }

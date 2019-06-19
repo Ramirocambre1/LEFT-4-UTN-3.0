@@ -24,7 +24,13 @@ public class Mapa {
         return localizacion;
     }
 
+    public void opcionesPrincipales()//Opciones principales cuando te encontras con un Zombie
+    {
+        System.out.println("1.Atacar");
+        System.out.println("2.Correr");
+        System.out.println("3.Consultar vida y Equipamiento");
 
+    }
 
     public void describir(String mapa) {
 

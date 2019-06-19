@@ -18,12 +18,16 @@ public class Witch extends Zombie implements DescripcionZombie, Atacar {
 
     @Override
     public int atacar() {
-        int minimo=99;
+        int minimo=100;
         int maximo=100;
 
         int daño= (int) (Math.random()*(maximo-minimo)+minimo);
 
-        System.out.println("La witch se abalanza sobre vos con sus garras haciendote  "+daño+ "de daño ");
+        System.out.println("Te araña la cara con sus garras,haciendote quedar ciego y te termina comiendo " +
+                "provocandote" +
+                "  "+daño+
+                " de daño ");
+        System.out.println("-----------------------");
 
         return daño;
     }

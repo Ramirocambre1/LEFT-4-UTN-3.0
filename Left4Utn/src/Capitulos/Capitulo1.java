@@ -28,103 +28,140 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
     }
 
 
-    public void opcionesPrincipales()//Opciones principales cuando te encontras con un Zombie
-    {
-        System.out.println("1.Atacar");
-        System.out.println("2.Correr");
-        System.out.println("3.Consultar vida y Equipamiento");
 
-    }
 
     public int parte1()
     {
+        System.out.println("-----------------------");
         System.out.println("Te encontras en la terraza,a la vista tenes una puerta,que decision tomas?");
+        System.out.println("-----------------------");
         System.out.println("1.Caminar hacia la puerta");
         System.out.println("2.Asomarte por la corniza para ver hacia abajo");
         Scanner scanf= new Scanner(System.in);
         int opcion=0;
         Menu menu= new Menu();
-        menu.ingreseOpcion();
-
-        opcion=scanf.nextInt();
-
-
-
-        if (opcion==1)
-        {
-            System.out.println("De camino a la puerta te encontras una tuberia rota y la agarras como arma para " +
-                    "defenderte");
-
-
-
-        }
-        else
-        {
-            System.out.println("Te asomas por la corniza al ver miles de zombies te asustas,resbalandote por el suelo" +
-                    "  humedo a causa de la lluvia" +
-                    " asi cayendote " +
-                    "hacia adelante,perdiendo tu vida");
-        }
-
-        return opcion;
-    }
-
-    public void parte2(int opcion)
-    {
 
         int flag=0;
 
-        Menu menu= new Menu();
 
 
-      while (flag==0)
-      {
+        while (flag==0 || flag==2)
+        {
+            menu.ingreseOpcion();
+            opcion=scanf.nextInt();
+
+            if(opcion>0 && opcion<3)
+            {
+                if (opcion==1)
+                {
+                    System.out.println("-----------------------");
+                    System.out.println("De camino a la puerta te encontras una tuberia rota y la agarras como arma para " +
+                            "defenderte");
+                    System.out.println("-----------------------");
+                    flag=1;
 
 
-        if (opcion>0 && opcion<4)
-      {
-          if (opcion==1)
-          {
-              System.out.println("Decidiste ir por el pasillo de la izquierda te encontras con un zombie en el medio " +
-                      "del pasillo" +
-                      ",detecta tu " +
-                      "presencia y se acerca hacia vos,que decision elegis?");
+                }
+                else
+                {    System.out.println("-----------------------");
+                    System.out.println("Te asomas por la corniza al ver miles de zombies te asustas,resbalandote por el suelo" +
+                            "  humedo a causa de la lluvia" +
+                            " asi cayendote " +
+                            "hacia adelante,perdiendo tu vida");
+                    System.out.println("-----------------------");
+                    flag=1;
+                }
+            }
+            else
+            {
 
-              flag=1;
-          }
-          else if (opcion==2)
-          {
-              System.out.println("Decidiste ir por el pasillo del medio,te encuentras con unos de tus compañeros de " +
-                      "la universidad,le preguntas que esta pasando pero el tampoco sabe nada.Tiene demasiado miedo " +
-                      "para continuar asi que vuelves hacia atras.");
+                System.out.println("Esa opcion no existe!!!,ingrese nuevamente");
+                flag=2;
 
-              flag=1;
-          }
-          else if(opcion==3)
-          {
-              System.out.println("Decidiste ir por el pasillo de la derecha,el cual da a los baños,Con valentia " +
-                      "entras para ver " +
-                      "si hay" +
-                      " alguien vivo,esta vacio pero antes de darte la vuelta en el piso encontras un pistola y la " +
-                      "agarras.");
-
-              System.out.println("Conseguiste una nueva arma---> 'Glock 18' ");
-
-              flag=1;
-
-          }
-
-      }
-      else
-      {
-          System.out.println("Esa opcion no existe!!!,ingrese nuevamente");
-
-      }
-      }
-
+            }
 
 
     }
+        return opcion;
+    }
+
+    public int parte2(int opcion)
+    {
+        int flag=0;
+        int flag2=0;
+        Menu menu= new Menu();
+        Scanner scanf= new Scanner(System.in);
+
+
+            if (opcion>0 && opcion<4)
+            {
+                if (opcion==1)
+                {
+                    System.out.println("-----------------------");
+                    System.out.println("Decidiste ir por el pasillo de la izquierda te encontras con un zombie en el medio " +
+                            "del pasillo" +
+                            ",detecta tu " +
+                            "presencia y se acerca hacia vos,que decision elegis?");
+                    System.out.println("-----------------------");
+
+
+                }
+
+
+            }
+
+
+        return flag;
+
+    }
+
+
+    public int parte3(){
+        Menu menu= new Menu();
+        System.out.println("-----------------------");
+        System.out.println("Luego de matar al zombie, corres hacia las escaleras mas cercanas buscando la salida principal " +
+                ". Ya estando en planta baja, escuchas a una mujer llorando.Que decidis hacer?");
+        System.out.println("-----------------------");
+        System.out.println("1. Te acercas para averiguar lo que esta pasando.");
+        System.out.println("2. Sigilosamente, vas hacia la salida");
+
+        Scanner scanf= new Scanner(System.in);
+        int opcion=0;
+        int flag=0;
+
+        while(flag==0 || flag==2){
+
+            menu.ingreseOpcion();
+            opcion=scanf.nextInt();
+
+            if(opcion>0 && opcion<3){
+
+
+                if (opcion==1){
+                    System.out.println("-----------------------");
+                    System.out.println("Decidiste acercarte a la mujer que esta llorando, apoyas tu mano en su hombro y ella se da vuelta, es" +
+                            "un infectado mas.");
+
+                    flag=1;
+                }else if(opcion==2){
+                    System.out.println("-----------------------");
+                    System.out.println("Elegiste salir sigilosamente por la puerta principal, saltas el monolito y no sabes para donde ir, " +
+                            "ves un graffiti en la pared que dice AYUDAMOS A LA GENTE EN PREFECTURA.");
+                    System.out.println("-----------------------");
+                    System.out.println("");
+                    System.out.println("-----------Fin del capitulo-----------");
+                    System.out.println("");
+                    flag=1;
+                }
+
+            }else{
+                System.out.println("Esta opcion no existe!!!. Ingrese nuevamente");
+                flag=2;
+            }
+        }
+        return opcion;
+    }
+
 
     public String  correrMuerte()
     {

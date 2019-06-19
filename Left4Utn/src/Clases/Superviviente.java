@@ -24,7 +24,7 @@ public class Superviviente extends Personaje implements Atacar {
 
         int daño=arma.getDaño();
 
-        System.out.println("Atacaste al Zombie haciendole "+ daño +" de daño al infectado");
+        System.out.println("Atacaste al infectado haciendole "+ daño +" de daño ");
 
         return daño;
     }
