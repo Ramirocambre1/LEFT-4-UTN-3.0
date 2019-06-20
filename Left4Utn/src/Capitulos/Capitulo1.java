@@ -33,7 +33,7 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
     public int parte1()
     {
         System.out.println("-----------------------");
-        System.out.println("Te encontras en la terraza,a la vista tenes una puerta,que decision tomas?");
+        System.out.println("Te encontras en la terraza,a la vista tenes una puerta,Que decision tomas?");
         System.out.println("-----------------------");
         System.out.println("1.Caminar hacia la puerta");
         System.out.println("2.Asomarte por la corniza para ver hacia abajo");
@@ -101,7 +101,7 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
                     System.out.println("Decidiste ir por el pasillo de la izquierda te encontras con un zombie en el medio " +
                             "del pasillo" +
                             ",detecta tu " +
-                            "presencia y se acerca hacia vos,que decision tomas?");
+                            "presencia y se acerca hacia vos,Que decision tomas?");
                     System.out.println("-----------------------");
 
 
@@ -120,7 +120,7 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
         Menu menu= new Menu();
         System.out.println("-----------------------");
         System.out.println("Luego de matar al zombie, corres hacia las escaleras mas cercanas buscando la salida principal " +
-                ". Ya estando en planta baja, escuchas a una mujer llorando.Que decidis hacer?");
+                ". Ya estando en planta baja, escuchas a una mujer llorando.Que decision tomas?");
         System.out.println("-----------------------");
         System.out.println("1. Te acercas para averiguar lo que esta pasando.");
         System.out.println("2. Sigilosamente, vas hacia la salida");
@@ -147,9 +147,8 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
                     System.out.println("-----------------------");
                     System.out.println("Elegiste salir sigilosamente por la puerta principal, saltas el monolito y no sabes para donde ir, " +
                             "ves un graffiti en la pared que dice AYUDAMOS A LA GENTE EN PREFECTURA.");
-                    System.out.println("-----------------------");
                     System.out.println("");
-                    System.out.println("-----------Fin del capitulo-----------");
+                    System.out.println("|| Fin del capitulo ||");
                     System.out.println("");
                     flag=1;
                 }

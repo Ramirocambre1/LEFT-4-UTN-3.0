@@ -1,9 +1,6 @@
 package Ejecutable;
 
-import Armas.Escopeta;
-import Armas.Melee;
-import Armas.Pistola;
-import Armas.RifleAsalto;
+import Armas.*;
 import Capitulos.Capitulo1;
 import Capitulos.Capitulo2;
 import Capitulos.Capitulo3;
@@ -13,10 +10,7 @@ import Capitulos.Mapa;
 import Clases.Menu;
 import Clases.Superviviente;
 import Exceptions.NoVidaException;
-import Zombies.Charger;
-import Zombies.Hunter;
-import Zombies.Witch;
-import Zombies.ZombieNormal;
+import Zombies.*;
 
 import java.util.Scanner;
 
@@ -32,6 +26,7 @@ public class Main {
         Charger charger1=new Charger("Charger",60,"Masculino","Charger");
         ZombieNormal zombie1 = new ZombieNormal("Zombie generic 1",40,"M","Ninguna es inutil");
         Hunter hunter1=new Hunter("Hunter",120,"Masculino","Hunter");
+        Tank tank1= new Tank("Tank",200,"Masculino","Tank");
 
         //Armas
         Melee tuberia = new Melee("Tuberia",10,"Melee");
@@ -39,6 +34,7 @@ public class Main {
         RifleAsalto rifleAsalto1=new RifleAsalto("M4A1",40,"Rifle de Asalto");
         Escopeta escopeta1 = new Escopeta("Spas-12",38,"Escopeta");
         Melee melee2=new Melee("Hacha de bomberos",35,"Melee");
+        Francotirador francotirador1= new Francotirador("M40",60,"Francotirador");
 
         //Jugador
         Superviviente jugador = new Superviviente("Jorge",100,tuberia,"M",20);
@@ -59,20 +55,14 @@ public class Main {
 
 
         Scanner scanf = new Scanner(System.in);
-
-        //Variables opciones
         int opcion1=0;
 
-        //Variables de daño realizado;
-        int dañoJugador=0;
-        int dañoZombie=0;
-        //Variables flag
-        int flag=0;
-        int flag1=0;
-        int flag2=0;
+
 
 
 do {
+//Variables opciones
+
 
     int opcion2=0;
     Menu menu = new Menu();
@@ -81,11 +71,24 @@ do {
     opcion1=scanf.nextInt();
     jugador.resetearVida(100);
     zombie1.resetearVida(40);
+    jugador.setArma(tuberia);
+    //Variables flag
+    int flag=0;
+    int flag1=0;
+    int flag2=0;
+
+    //Variables de daño realizado;
+    int dañoJugador=0;
+    int dañoZombie=0;
+
+
     int opcionPrincipal=0;
     int opcionelegida2=2;
     int opcionelegida3=0;
     int opcionelegida4=0;
     int opcionelegida5=0;
+    int opcionelegida6=0;
+    int opcionelegida7=0;
 
 
         switch (opcion1)
@@ -112,7 +115,7 @@ do {
 
                 menu.ingreseOpcion();
                 opcionelegida2=scanf.nextInt();
-        cap1.parte2(opcionelegida2);
+                cap1.parte2(opcionelegida2);
 
 
         if (opcionelegida2==1)
@@ -135,12 +138,15 @@ do {
                 }
                 else if (opcionPrincipal==2)
                 {
-                    System.out.println(cap1.correrMuerte());
                     try {
+                        System.out.println(cap1.correrMuerte());
                         jugador.vidaCero();
                     } catch (NoVidaException e) {
                         e.printStackTrace();
                     }
+
+
+
                 }
                 else if (opcionPrincipal==3)
                 {
@@ -150,7 +156,7 @@ do {
             }
 
 
-                if (jugador.getSalud()>=0)
+                if (jugador.getSalud()>0)
                 {
                     opcionelegida=cap1.parte3();
 
@@ -287,11 +293,161 @@ do {
                                             {
                                                 cap2.parte4();
 
+                                                jugador.resetearVida(100);
+
                                                 cap3.describirNivel();
 
+                                                opcionelegida6=cap3.parte1();
+
+                                                if(opcionelegida6==1)
+                                                {
+                                                    opcionelegida7=cap3.parte2();
+
+                                                    if (opcionelegida7==1)
+                                                    {
+
+                                                        try {
+                                                            jugador.vidaCero();
+                                                        } catch (NoVidaException e) {
+                                                            e.printStackTrace();
+                                                        }
+
+
+                                                    }
+                                                    else if (opcionelegida7==2)
+                                                    {
+                                                        jugador.encontrarArma(francotirador1);
+                                                        System.out.println("Conseguiste un Rifle Francotirador");
+                                                        cap3.parte3();
+
+                                                        while (jugador.getSalud()>0 && tank1.getSalud()>0)
+                                                        {
+
+                                                            cap2.opcionesPrincipales();
+                                                            menu.ingreseOpcion();
+                                                            opcionPrincipal=scanf.nextInt();
+
+                                                            if (opcionPrincipal==1)
+                                                            {
+                                                                dañoZombie=jugador.atacar();
+                                                                dañoJugador=tank1.atacar();
+                                                                jugador.restarVida(dañoJugador);
+                                                                tank1.restarVida(dañoZombie);
+
+                                                            }
+
+                                                            else if (opcionPrincipal==2)
+                                                            {
+                                                                System.out.println("-----------------------");
+                                                                System.out.println("No podes correr,lo unico que " +
+                                                                        "podes hacer es pelear por tu vida!");;
+                                                                System.out.println("-----------------------");
+
+                                                            }
+                                                            else if (opcionPrincipal==3)
+                                                            {
+                                                                System.out.println(jugador.consultarVida());
+                                                                System.out.println(jugador.consultarArma());
+                                                            }
 
 
 
+                                                        }
+
+                                                        if (jugador.getSalud()>0)
+                                                        {
+
+                                                            cap3.parteFinal();
+
+
+
+                                                        }
+                                                        else
+                                                        {
+                                                            try {
+                                                                jugador.vidaCero();
+                                                            } catch (NoVidaException e) {
+                                                                e.printStackTrace();
+                                                            }
+
+
+                                                        }
+
+
+
+                                                    }
+                                                    else if (opcionelegida7==3)
+                                                    {
+                                                        cap3.parte3();
+
+                                                        while (jugador.getSalud()>0 && tank1.getSalud()>0)
+                                                        {
+
+                                                            cap3.opcionesPrincipales();
+                                                            menu.ingreseOpcion();
+                                                            opcionPrincipal=scanf.nextInt();
+
+                                                            if (opcionPrincipal==1)
+                                                            {
+                                                                dañoZombie=jugador.atacar();
+                                                                dañoJugador=tank1.atacar();
+                                                                jugador.restarVida(dañoJugador);
+                                                                tank1.restarVida(dañoZombie);
+
+                                                            }
+
+                                                            else if (opcionPrincipal==2)
+                                                            {
+                                                                System.out.println("-----------------------");
+                                                                System.out.println("No podes correr,lo unico que " +
+                                                                        "podes hacer es pelear por tu vida!");;
+                                                                System.out.println("-----------------------");
+
+                                                            }
+                                                            else if (opcionPrincipal==3)
+                                                            {
+                                                                System.out.println(jugador.consultarVida());
+                                                                System.out.println(jugador.consultarArma());
+                                                            }
+
+
+
+                                                        }
+
+
+                                                        if (jugador.getSalud()>0)
+                                                        {
+
+                                                            cap3.parteFinal();
+
+
+                                                        }
+                                                        else
+                                                        {
+                                                            try {
+                                                                jugador.vidaCero();
+                                                            } catch (NoVidaException e) {
+                                                                e.printStackTrace();
+                                                            }
+
+
+                                                        }
+
+
+
+                                                    }
+
+
+
+                                                }
+                                                else if(opcionelegida6==2)
+                                                {
+                                                    try {
+                                                        jugador.vidaCero();
+                                                    } catch (NoVidaException e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
 
                                             }
                                             else

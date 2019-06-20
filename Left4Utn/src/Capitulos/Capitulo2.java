@@ -31,7 +31,7 @@ public class Capitulo2 extends Mapa implements DescripcionNivel {
                 "zombies .\nLo primero que se te " +
                 "ocurre es intentar esconderse dentro del edificio, " +
                 "saltas una barrera de palos y alambres para entrar al edificio, la puerta se encontraba abierta.");
-        System.out.println("-----------------------");
+
 
     }
 
@@ -39,7 +39,7 @@ public class Capitulo2 extends Mapa implements DescripcionNivel {
         System.out.println("-----------------------");
         System.out.println("Al entrar al edificio de la prefectura,lo unico que ves son cuerpos sin vida,gritas para " +
                 "ver si queda alguien vivo,empezas a escuchar a alguien corriendo hacia vos,levantas tu " +
-                "mirada y ves un infectado deforme con  brazo gigante ,que decidis hacer");
+                "mirada y ves un infectado deforme con  brazo gigante ,Que decision tomas?");
         System.out.println("-----------------------");
         System.out.println("1.Intentar esquivarlo");
         System.out.println("2.Atacarlo");
@@ -153,7 +153,7 @@ return opcion;
                 "\nTe avisa que no pueden mandarte ayuda,que tendras que ir solo a la base,Unicamente te ayudaran si " +
                 "llegas hasta alli. Perplejo por lo que te dijo " +
                 ",pateas la puerta por donde entraste .\nPor el ruido provocado, entra a tu habitacion" +
-                "un infectado con capucha, corriendo y saltando velozmente. Que haces?");
+                "un infectado con capucha, corriendo y saltando velozmente. Que decision tomas?");
         System.out.println("-----------------------");
         System.out.println("1. Usas tu arma para defenderte");
         System.out.println("2. Lo esquivas y salis corriendo"); //muerte
@@ -204,7 +204,7 @@ return opcion;
                 System.out.println("-----------------------");
 
         System.out.println("");
-        System.out.println("-----------Fin del capitulo-----------");
+        System.out.println("|| Fin del capitulo ||");
         System.out.println("");
 
     }
