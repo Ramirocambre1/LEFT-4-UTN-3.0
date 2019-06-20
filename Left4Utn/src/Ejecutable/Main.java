@@ -4,14 +4,16 @@ import Armas.*;
 import Capitulos.Capitulo1;
 import Capitulos.Capitulo2;
 import Capitulos.Capitulo3;
-import Clases.Juego;
-import Clases.ListaGenerica;
+import Clases.*;
 import Capitulos.Mapa;
-import Clases.Menu;
-import Clases.Superviviente;
 import Exceptions.NoVidaException;
 import Zombies.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -21,47 +23,86 @@ public class Main {
         //Juego
         Juego juego = new Juego("LEFT4UTN","Felipe Cilia - Ramiro Cambre");
 
-        //Zombies
-        Witch witch1 = new Witch("Witch",10,"F","Witch");
-        Charger charger1=new Charger("Charger",60,"Masculino","Charger");
-        ZombieNormal zombie1 = new ZombieNormal("Zombie generic 1",40,"M","Ninguna es inutil");
-        Hunter hunter1=new Hunter("Hunter",120,"Masculino","Hunter");
-        Tank tank1= new Tank("Tank",200,"Masculino","Tank");
 
-        //Armas
-        Melee tuberia = new Melee("Tuberia",10,"Melee");
-        Pistola pistola1 = new Pistola("Glock 18",25,"Pistola");
-        RifleAsalto rifleAsalto1=new RifleAsalto("M4A1",40,"Rifle de Asalto");
-        Escopeta escopeta1 = new Escopeta("Spas-12",38,"Escopeta");
-        Melee melee2=new Melee("Hacha de bomberos",35,"Melee");
-        Francotirador francotirador1= new Francotirador("M40",60,"Francotirador");
+        juego.jsonArrayToArrayListArmas();//Se lee el archivo de armas para pasarlos a la collecion de tipo ArrayList
 
-        //Jugador
-        Superviviente jugador = new Superviviente("Jorge",100,tuberia,"M",20);
+        juego.jsonArrayToHashMapCapitulos();//Se lee el archivo de capitulos para pasarlo a la collecion de tipo hashmap
 
-
-        juego.agregarZombie(witch1);
-        juego.agregarZombie(zombie1);
-
-        Capitulo1 cap1 = new Capitulo1("Lluvioso","Mar del Plata");
-        Capitulo2 cap2 = new Capitulo2("Nublado","Edificio de prefectura");
-        Capitulo3 cap3 = new Capitulo3("Soleado","Base Naval");
-
-        ListaGenerica listaArmas = new ListaGenerica();
-        listaArmas.agregarElementos(escopeta1);
-        listaArmas.agregarElementos(pistola1);
+        juego.jsonArrayToHashMapZombies();//Se lee el archivo de zombies para pasarlo a la collecion de tipo hashmap
 
 
 
 
-        Scanner scanf = new Scanner(System.in);
         int opcion1=0;
 
 
-
-
 do {
-//Variables opciones
+
+   // Asignacion de los Zombies
+
+    Zombie zombie0 = new Witch();
+    Zombie zombie2 = new Charger();
+    Zombie zombie3= new Tank();
+    Zombie zombie4=new Hunter();
+    Zombie zombie5=new ZombieNormal();
+
+    zombie0=juego.retornarZombie("Witch");
+    zombie2=juego.retornarZombie("Charger");
+    zombie3=juego.retornarZombie("Tank");
+    zombie4=juego.retornarZombie("Hunter");
+    zombie5=juego.retornarZombie("Zombie generic 1");
+
+
+    Witch witch1= new Witch(zombie0.getNombre(),zombie0.getSalud(),zombie0.getSexo(),zombie0.getEspecialidad());
+    Charger charger1=new Charger(zombie2.getNombre(),zombie2.getSalud(),zombie2.getSexo(),
+            zombie2.getEspecialidad());
+    Tank tank1=new Tank(zombie3.getNombre(),zombie3.getSalud(),zombie3.getSexo(),zombie3.getEspecialidad());
+    Hunter hunter1=new Hunter(zombie4.getNombre(),zombie4.getSalud(),zombie4.getSexo(),zombie4.getEspecialidad());
+    ZombieNormal zombie1= new ZombieNormal(zombie5.getNombre(),zombie5.getSalud(),zombie5.getSexo(),
+            zombie5.getEspecialidad());
+
+
+
+// Asignacion de las Armas
+
+        Arma tuberia = new Arma();
+        Arma pistola1= new Arma();
+        Arma escopeta1=new Arma();
+        Arma rifleAsalto1=new Arma();
+        Arma francotirador1=new Arma();
+        Arma melee2=new Arma();
+
+        francotirador1=juego.retonarArma("M40");
+        rifleAsalto1=juego.retonarArma("M4A1");
+        escopeta1=juego.retonarArma("Spas-12");
+        pistola1=juego.retonarArma("Glock 18");
+        tuberia=juego.retonarArma("Tuberia");
+        melee2=juego.retonarArma("Hacha de bomberos");
+
+
+
+
+//Asignacion de los capitulos
+
+    Mapa capitulo1=new Capitulo1();
+    Mapa capitulo2=new Capitulo2();
+    Mapa capitulo3=new Capitulo3();
+
+    capitulo1=juego.retornarCapitulo("La azotea");
+    capitulo2=juego.retornarCapitulo("Señales de vida");
+    capitulo3=juego.retornarCapitulo("El escape");
+
+    Capitulo1 cap1= new Capitulo1(capitulo1.getNombre(),capitulo1.getClima(),capitulo1.getLocalizacion());
+    Capitulo2 cap2=new Capitulo2(capitulo2.getNombre(),capitulo2.getClima(),capitulo2.getLocalizacion());
+    Capitulo3 cap3=new Capitulo3(capitulo3.getNombre(),capitulo3.getClima(),capitulo3.getLocalizacion());
+
+//Asignacion de los Zombies
+
+Scanner scanf = new Scanner(System.in);
+
+
+
+Superviviente jugador = new Superviviente("Jorge",100,tuberia,"M",20);
 
 
     int opcion2=0;
@@ -69,7 +110,7 @@ do {
     menu.menuPrincipal();
     menu.ingreseOpcion();
     opcion1=scanf.nextInt();
-    jugador.resetearVida(100);
+    jugador.resetearVida(100); //resetean la vida del jugador por si se vuelve a empezar
     zombie1.resetearVida(40);
     jugador.setArma(tuberia);
     //Variables flag
@@ -81,7 +122,7 @@ do {
     int dañoJugador=0;
     int dañoZombie=0;
 
-
+    //Variables de opciones
     int opcionPrincipal=0;
     int opcionelegida2=2;
     int opcionelegida3=0;
@@ -318,6 +359,7 @@ do {
                                                     {
                                                         jugador.encontrarArma(francotirador1);
                                                         System.out.println("Conseguiste un Rifle Francotirador");
+                                                        System.out.println("-----------------------");
                                                         cap3.parte3();
 
                                                         while (jugador.getSalud()>0 && tank1.getSalud()>0)
@@ -566,13 +608,16 @@ do {
                 switch (opcion2)
                 {
                     case 1:
+                        System.out.println("----ZOMBIES----");
                         juego.listarZombie();
                         break;
                     case 2:
-                        //Mostrar mapas
+                        System.out.println("----CAPITULOS----");
+                        juego.listarCapitulos();
                         break;
                     case 3:
-                        listaArmas.listarElementos();
+                        System.out.println("----ARMAS----");
+                        juego.listarArmas();
                         break;
                 }
 
@@ -587,6 +632,11 @@ do {
 
         }
 }while (opcion1!=4);
-    }
+
+
+
+
+}
+
 }
 

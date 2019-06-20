@@ -8,15 +8,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Capitulo1 extends Mapa implements Describir {
+public class Capitulo1 extends Mapa implements Describir {//Capitulo 1  de la historia,que utilizas metodos
+    //para desarrollar la historia
 
-    public Capitulo1(String clima, String localizacion) {
-        super(clima, localizacion);
+    public Capitulo1(String  nombre,String clima, String localizacion) {
+        super(nombre,clima, localizacion);
+    } //Constructor de la clase
+
+    public Capitulo1()
+    {
+        super();
     }
 
 
     @Override
-    public void describir() {
+    public void describir() {//Implementacion de la interfaz que describe el comienzo del capitulo 1
 
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
@@ -30,7 +36,7 @@ public class Capitulo1 extends Mapa implements Describir {
 
 
 
-    public int parte1()
+    public int parte1()//Metodo que imprime las diferentes opciones de la parte1 del capitulo 1
     {
         System.out.println("-----------------------");
         System.out.println("Te encontras en la terraza,a la vista tenes una puerta,Que decision tomas?");
@@ -85,7 +91,7 @@ public class Capitulo1 extends Mapa implements Describir {
         return opcion;
     }
 
-    public int parte2(int opcion)
+    public int parte2(int opcion)//Metodo que imprime las diferentes opciones de la parte2 del capitulo 1
     {
         int flag=0;
         int flag2=0;
@@ -116,7 +122,8 @@ public class Capitulo1 extends Mapa implements Describir {
     }
 
 
-    public int parte3(){
+    public int parte3(){//Metodo que imprime las diferentes opciones de la parte3 del capitulo 1 y marca el final del
+        // cap 1
         Menu menu= new Menu();
         System.out.println("-----------------------");
         System.out.println("Luego de matar al zombie, corres hacia las escaleras mas cercanas buscando la salida principal " +
@@ -139,7 +146,8 @@ public class Capitulo1 extends Mapa implements Describir {
 
                 if (opcion==1){
                     System.out.println("-----------------------");
-                    System.out.println("Decidiste acercarte a la mujer que esta llorando, apoyas tu mano en su hombro y ella se da vuelta, es" +
+                    System.out.println("Decidiste acercarte a la mujer que esta llorando, apoyas tu mano en su hombro" +
+                            " y ella se da vuelta, es " +
                             "un infectado mas.");
 
                     flag=1;
@@ -162,7 +170,7 @@ public class Capitulo1 extends Mapa implements Describir {
     }
 
 
-    public String  correrMuerte()
+    public String  correrMuerte()//Metodo que describe tu muerte en unas de las opcines del cap1
     {
         return "-----------------------\nDecidiste correr,Provando la atencion de mas zombies,no podes contra todos " +
                 "vos solo," +

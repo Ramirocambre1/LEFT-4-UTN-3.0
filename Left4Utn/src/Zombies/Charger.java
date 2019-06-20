@@ -3,14 +3,24 @@ package Zombies;
 
 import Interfaces.Atacar;
 import Interfaces.Describir;
+import Interfaces.Json;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Charger extends Zombie implements Describir, Atacar {
-    public Charger(String nombre, int salud, String sexo, String especialidad) {
+public class Charger extends Zombie implements Describir, Atacar {//Clase del zombi tipo charger
+    public Charger(String nombre, int salud, String sexo, String especialidad) { //Constructor de la clase
         super(nombre, salud,sexo, especialidad);
     }
 
+    public Charger()
+    {
+
+        super();
+
+    }
+
     @Override
-    public void describir() {
+    public void describir() { //implementacion de la interfaz para describir al zombi
 
         System.out.println(" Infectado deforme que posee un robusto y gigantesco brazo, cuyo tamaño es inversamente " +
                 "proporcional al otro, que es muy pequeño. Es capaz de correr a gran velocidad hacia uno de los " +
@@ -19,7 +29,8 @@ public class Charger extends Zombie implements Describir, Atacar {
     }
 
     @Override
-    public int atacar() {
+    public int atacar() {//implementacion de la interfaz que realiza la opcion de atacar cada zombi con difrentes
+        // mensajes y daño causado.
         int minimo=10;
         int maximo=15;
 
@@ -34,5 +45,7 @@ public class Charger extends Zombie implements Describir, Atacar {
     @Override
     public String toString() {
         return super.toString();
-    }
+    }//Metodo que te devuelve la info del zombi
+
+
 }

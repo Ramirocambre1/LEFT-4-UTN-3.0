@@ -8,12 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Capitulo2 extends Mapa implements Describir {
-    public Capitulo2(String clima, String localizacion) {
-        super(clima, localizacion);
+public class Capitulo2 extends Mapa implements Describir {//Capitulo 2  de la historia,que utiliza metodos para
+    // desarrollar la historia
+    public Capitulo2(String nombre,String clima, String localizacion) {
+        super(nombre,clima, localizacion);
+    }// Constructor de la clase
+
+    public Capitulo2()
+    {
+        super();
     }
 
-    public void describir(){
+    public void describir(){//Implementacion de la interfaz en la clase que describe el comienzo del capitulo 2
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         System.out.println("-----------------------");
@@ -35,7 +41,7 @@ public class Capitulo2 extends Mapa implements Describir {
 
     }
 
-    public int parte1(){
+    public int parte1(){//Metodo que imprime las diferentes opciones de la parte1 del capitulo 2
         System.out.println("-----------------------");
         System.out.println("Al entrar al edificio de la prefectura,lo unico que ves son cuerpos sin vida,gritas para " +
                 "ver si queda alguien vivo,empezas a escuchar a alguien corriendo hacia vos,levantas tu " +
@@ -93,7 +99,7 @@ return opcion;
 
     }
 
-    public int parte2(){ //radio en armeria
+    public int parte2(){ //Metodo que imprime las diferentes opciones de la parte2 del capitulo 2
         System.out.println("-----------------------");
         System.out.println("Luego de matar al infectado, miras por la ventana y la horda sigue estando en la avenida," +
                 " decidis esperar hasta que pasen todos.\nVes una silla para descanzar,te acomodas y al instante " +
@@ -144,16 +150,16 @@ return opcion;
         return opcion;
     }
 
-    public int parte3(){ //escape
+    public int parte3(){ //Metodo que imprime las diferentes opciones de la parte3 del capitulo 2
         System.out.println("-----------------------");
         System.out.println("Logras comunicarte con la persona del walkie talkie, y te avisa que al dia siguiente  a " +
                 "las 13:30 pm" +
                 "  desde" +
                 " la base naval, zarparan submarinos en busca de nuevas tierras sin infectados." +
-                "\nTe avisa que no pueden mandarte ayuda,que tendras que ir solo a la base,Unicamente te ayudaran si " +
+                "\nTe avisa que no pueden mandarte ayuda,que tendras que ir solo a la base.Unicamente te ayudaran si " +
                 "llegas hasta alli. Perplejo por lo que te dijo " +
                 ",pateas la puerta por donde entraste .\nPor el ruido provocado, entra a tu habitacion" +
-                "un infectado con capucha, corriendo y saltando velozmente. Que decision tomas?");
+                " un infectado con capucha, corriendo y saltando velozmente. Que decision tomas?");
         System.out.println("-----------------------");
         System.out.println("1. Usas tu arma para defenderte");
         System.out.println("2. Lo esquivas y salis corriendo"); //muerte
@@ -196,7 +202,7 @@ return opcion;
         return opcion;
     }
 
-    public void parte4()
+    public void parte4()//Metodo que muestra el final del capitulo 2
     {
         System.out.println("Cansado por la batalla con el infectado y ya con el dia anocheciendo decidis descansar " +
                         "para recuperar tus fuerzas y prepararte para emprender tu camino mañana " +

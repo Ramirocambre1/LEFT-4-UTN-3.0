@@ -6,7 +6,8 @@ public class Menu {
 
     }
 
-    public void menuPrincipal()
+    public void menuPrincipal() //Menu principal que se ejecuta la principio de la ejecucion del programa con las
+    // opciones principales
     {
         System.out.println("----Menu Principal----");
         System.out.println("1.Empezar partida");
@@ -17,16 +18,16 @@ public class Menu {
 
     }
 
-    public void menuExtras()
+    public void menuExtras()//Menu de extras que muestra los diferetes elementos cargados en las colleciones
     {
         System.out.println("----Menu Extras----");
         System.out.println("1.Mostrar Zombies");
-        System.out.println("2.Mostrar Mapas");
+        System.out.println("2.Mostrar Capitulos");
         System.out.println("3.Mostrar Armas");
         System.out.println("4.Volver hacia atras");
     }
 
-    public void creditos()
+    public void creditos()//Los creadores del tp :)
     {
         System.out.println("---Creadores---");
         System.out.println("Felipe Cilia");
@@ -36,7 +37,7 @@ public class Menu {
     public void ingreseOpcion()
     {
         System.out.println("-Ingrese la opcion-");
-    }
+    } // Metodo que muestra para ingresar una opciones,se utiliza con los diferentes menus que tiene el trabajo
 
 
 }

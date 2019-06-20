@@ -8,11 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Capitulo3 extends Mapa implements Describir {
-    public Capitulo3(String clima, String localizacion) {
-        super(clima, localizacion);
+public class Capitulo3 extends Mapa implements Describir { //Capitulo 3  de la historia,que utiliza metodos  para
+    // desarrollar la historia
+    public Capitulo3(String nombre,String clima, String localizacion) {//Constructor de la clase
+        super(nombre,clima, localizacion);
     }
-    public void describir(){
+
+    public Capitulo3()
+    {
+        super();
+    }
+
+    public void describir(){//Implementacion de la interfaz en la clase que describe el comienzo del capitulo 3
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         System.out.println("-------CAPITULO 3--------");
@@ -26,7 +33,7 @@ public class Capitulo3 extends Mapa implements Describir {
                 "\nHoy" +
                 " tenes que llegar a la base naval antes de la" +
                 " " +
-                "1:30 pm. cueste" +
+                "13:30 pm. cueste" +
                 " lo que cueste." +
                 " Estas a contrareloj ya que estas a pie. Recordas que hay una estacion de servicios a la vuelta de " +
                 "la universidad, tal vez pueda haber un vehiculo que todavia funcione" +
@@ -44,7 +51,7 @@ public class Capitulo3 extends Mapa implements Describir {
 
     }
 
-    public int parte1(){
+    public int parte1(){//Metodo que imprime las diferentes opciones de la parte1 del capitulo 3
         System.out.println("-----------------------");
         System.out.println("Al llegar, todavia estando en la moto, te encontras con un porton enorme y una barricada  para que los zombies no pasen. " +
                 "\nCon el ruido de la moto, atrajiste la atencion de varios infectados que se encontraban en la zona," +
@@ -93,10 +100,10 @@ public class Capitulo3 extends Mapa implements Describir {
         }
         return opcion;
     }
-    public int parte2(){ //
+    public int parte2(){ //Metodo que imprime las diferentes opciones de la parte2 del capitulo 3
         System.out.println("-----------------------");
         System.out.println(" El militar intenta cerrar el porton,pero por el peso causado por todos los zombies " +
-                "intentando entrar,no tiene suficiente fuerza causando que un zombie lo agarre del brazo  Que " +
+                "intentando entrar,no tiene suficiente fuerza, causando que un zombie lo agarre del brazo  Que " +
                 "decision tomas? ");
         System.out.println("-----------------------");
         System.out.println("1.La situacion te supera y decidis quedarte sin hacer nada");
@@ -161,7 +168,7 @@ public class Capitulo3 extends Mapa implements Describir {
         return opcion;
     }
 
-    public void parte3(){ //escape en submarino?
+    public void parte3(){ //Metodo que imprime las diferentes opciones de la parte 3 del capitulo 3
 
 
         System.out.println("Llegaste al refugio de los submarinos,entras corriendo rapidamente y ves como la gente " +
@@ -172,13 +179,13 @@ public class Capitulo3 extends Mapa implements Describir {
                 "visto algo tan horroroso en tu vida,,con " +
                 "ayuda de los soldados que quedaba por evacuar " +
                 "empiezas a atacarlo");
-
+        System.out.println("-----------------------");
 
 
 
     }
 
-    public  void parteFinal()
+    public  void parteFinal()//Metodo que marca el final de la historia y imprime a sus creadores !!!!!!!!!
     {
 
         System.out.println("Lograste vencer al infectado,y escaparte en los submarinos con el resto de los " +
