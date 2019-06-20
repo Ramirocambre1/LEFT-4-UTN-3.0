@@ -2,15 +2,14 @@ package Zombies;
 
 
 import Interfaces.Atacar;
+import Interfaces.Describir;
 
-import Interfaces.DescripcionZombie;
-
-public class Tank extends Zombie implements DescripcionZombie, Atacar {
+public class Tank extends Zombie implements Describir, Atacar {
     public Tank(String nombre, int salud, String sexo, String especialidad) {
         super(nombre, salud, sexo, especialidad);
     }
 
-    public void describirZombie()
+    public void describir()
     {
         System.out.println("Infectado monstruoso con una gran masa muscular y resistencia. Puede agarrar cosas " +
                 "pesadas (como rocas, vehículos livianos, contenedores de basuras e incluso árboles enteros) y tirarlos a los supervivientes. También puede lanzar tanto a infectados como a los supervivientes por los aires, haciéndoles mucho daño..");

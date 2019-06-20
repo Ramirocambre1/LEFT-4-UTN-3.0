@@ -97,7 +97,7 @@ do {
             {
                 int opcionelegida=0;
 
-                cap1.describirNivel();
+                cap1.describir();
                 opcionelegida=cap1.parte1();
 
                 if (opcionelegida==1)
@@ -173,7 +173,7 @@ do {
                     }
                     else if(opcionelegida==2)
                     {
-                        cap2.describirNivel();
+                        cap2.describir();
                         opcionelegida3=cap2.parte1();
 
                             if (opcionelegida3==1)
@@ -295,7 +295,7 @@ do {
 
                                                 jugador.resetearVida(100);
 
-                                                cap3.describirNivel();
+                                                cap3.describir();
 
                                                 opcionelegida6=cap3.parte1();
 

@@ -52,14 +52,6 @@ public class Personaje {
 
     }
 
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
     public void restarVida(int vida)
     {
 

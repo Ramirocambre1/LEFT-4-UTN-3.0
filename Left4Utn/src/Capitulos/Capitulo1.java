@@ -1,14 +1,14 @@
 package Capitulos;
 
 import Clases.Menu;
-import Interfaces.DescripcionNivel;
+import Interfaces.Describir;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Capitulo1 extends Mapa implements DescripcionNivel {
+public class Capitulo1 extends Mapa implements Describir {
 
     public Capitulo1(String clima, String localizacion) {
         super(clima, localizacion);
@@ -16,7 +16,7 @@ public class Capitulo1 extends Mapa implements DescripcionNivel {
 
 
     @Override
-    public void describirNivel() {
+    public void describir() {
 
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();

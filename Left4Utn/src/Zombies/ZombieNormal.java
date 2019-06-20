@@ -2,16 +2,15 @@ package Zombies;
 
 
 import Interfaces.Atacar;
+import Interfaces.Describir;
 
-import Interfaces.DescripcionZombie;
-
-public class ZombieNormal extends Zombie implements DescripcionZombie, Atacar {
+public class ZombieNormal extends Zombie implements Describir, Atacar {
     public ZombieNormal(String nombre, int salud, String sexo, String especialidad) {
         super(nombre, salud, sexo, especialidad);
     }
 
     @Override
-    public void describirZombie() {
+    public void describir() {
         System.out.println("También conocidos como Zombis, Caminantes, Muertos Vivientes son infectados que no " +
                 "mutaron y solamente perdieron la razón, tienen todavía la forma humana.");
 

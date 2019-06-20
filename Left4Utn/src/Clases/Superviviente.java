@@ -30,20 +30,6 @@ public class Superviviente extends Personaje implements Atacar {
         return daño;
     }
 
-    public int getSaludJugador()throws NoVidaException
-    {
-      int vida= getSalud();
-
-      if (vida<=0)
-      {
-          throw  new NoVidaException("GAME OVER TE QUEDASTE SIN VIDA");
-
-      }
-
-      return vida;
-
-    }
-
 
     public Arma getArma() {
         return arma;

@@ -1,18 +1,18 @@
 package Capitulos;
 
 import Clases.Menu;
-import Interfaces.DescripcionNivel;
+import Interfaces.Describir;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Capitulo3 extends Mapa implements DescripcionNivel {
+public class Capitulo3 extends Mapa implements Describir {
     public Capitulo3(String clima, String localizacion) {
         super(clima, localizacion);
     }
-    public void describirNivel(){
+    public void describir(){
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         System.out.println("-------CAPITULO 3--------");

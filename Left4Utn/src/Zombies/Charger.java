@@ -2,16 +2,15 @@ package Zombies;
 
 
 import Interfaces.Atacar;
+import Interfaces.Describir;
 
-import Interfaces.DescripcionZombie;
-
-public class Charger extends Zombie implements DescripcionZombie, Atacar {
+public class Charger extends Zombie implements Describir, Atacar {
     public Charger(String nombre, int salud, String sexo, String especialidad) {
         super(nombre, salud,sexo, especialidad);
     }
 
     @Override
-    public void describirZombie() {
+    public void describir() {
 
         System.out.println(" Infectado deforme que posee un robusto y gigantesco brazo, cuyo tamaño es inversamente " +
                 "proporcional al otro, que es muy pequeño. Es capaz de correr a gran velocidad hacia uno de los " +

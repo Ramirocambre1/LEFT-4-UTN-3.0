@@ -39,25 +39,14 @@ public class Mapa {
 
 
         if (mapa.equals("mapa1"))
-        {
+            {
             System.out.println(" Todo comienza en la ciudad de "+ getLocalizacion()+ " en la azotea de la Universidad" +
                     " UTN. El" +
                     "supervivientes observa impotentes como un helicóptero de la prefectura se aleja sin " +
                     "verlo,"+"La hora era:"+dateFormat.format(date)+" y el clima estaba "+getClima());
 
         }
-        else if(mapa.equals("mapa2"))
-        {
 
-        }
-        else if(mapa.equals("mapa3"))
-        {
-
-        }
-        else if( mapa.equals("mapa4"))
-        {
-
-        }
 
     }
 }
